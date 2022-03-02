@@ -22,11 +22,15 @@ type Post{
        Query: {
            async getPosts(){
                try{
-                   const posts = await Post.find()
+                   const posts = await Post.find();
+                   return posts;
+               } catch(err){
+                   throw new Error(err);
                }
+
            }
        }
-   }
+   };
 
    const server = new ApolloServer({
       typeDefs,

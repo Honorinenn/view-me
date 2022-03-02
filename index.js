@@ -20,7 +20,11 @@ type Post{
 
    const resolvers = {
        Query: {
-           sayHi: () => 'Hello World!!!!!'
+           async getPosts(){
+               try{
+                   const posts = await Post.find()
+               }
+           }
        }
    }
 
